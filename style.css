@@ -60,7 +60,6 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #FC9E4F; 
     color: #020122; 
     font-family: 'vazirmatn', sans-serif;
@@ -84,6 +83,8 @@ p {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -91,16 +92,40 @@ p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
 .card-header {
     background-color: #020122; /* Primary color for header */
     color: #FC9E4F; /* Secondary color for text */
-    padding: 20px;
+    padding: 10px 0px;
     font-size: 1.5em;
     font-weight: bold;
+    text-align: center;
 }
 
 .card-body {
-    padding: 20px;
+    flex: 1;
     font-size: 1em;
-    text-align: right;
+}
+
+.read-more {
+    color: #020122; /* Primary color for text */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #21212a; /* Slightly darker primary color */
 }
