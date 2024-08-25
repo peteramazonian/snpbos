@@ -1,37 +1,35 @@
 document.addEventListener("DOMContentLoaded", function() {
     const blocksRight = document.querySelectorAll('.blocks.right .block');
     const blocksLeft = document.querySelectorAll('.blocks.left .block');
-    let currentRightIndex = blocksRight.length - 1;
-    let currentLeftIndex = 0;
+    let currentRightIndex = 0;
+    let currentLeftIndex = blocksLeft.length;
     let movingToLeft = true;
 
-    function moveBlock() {
-        if (movingToLeft && currentRightIndex >= 0) {
-            const block = blocksRight[currentRightIndex];
-            block.classList.add('moving');
-            setTimeout(() => {
-                document.querySelector('.blocks.left').appendChild(block);
-                block.classList.remove('moving');
-                currentRightIndex--;
-                currentLeftIndex++;
-                if (currentRightIndex < 0) {
-                    movingToLeft = false;
-                }
-            }, 2000);  // adjust timing based on animation
-        } else if (!movingToLeft && currentLeftIndex > 0) {
-            const block = blocksLeft[currentLeftIndex - 1];
-            block.classList.add('moving');
-            setTimeout(() => {
-                document.querySelector('.blocks.right').appendChild(block);
-                block.classList.remove('moving');
-                currentRightIndex++;
-                currentLeftIndex--;
-                if (currentLeftIndex == 0) {
-                    movingToLeft = true;
-                }
-            }, 2000);  // adjust timing based on animation
+    function moveBlocks() {
+        if (movingToLeft) {
+            if (currentRightIndex < blocksRight.length) {
+                let block = blocksRight[currentRightIndex];
+                setTimeout(() => {
+                    document.querySelector('.blocks.left').appendChild(block);
+                    currentRightIndex++;
+                    currentLeftIndex++;
+                }, 2000); // Adjust timing for visual effect
+            } else {
+                movingToLeft = false;
+            }
+        } else {
+            if (currentLeftIndex > 0) {
+                let block = document.querySelector('.blocks.left .block:last-child');
+                setTimeout(() => {
+                    document.querySelector('.blocks.right').appendChild(block);
+                    currentRightIndex--;
+                    currentLeftIndex--;
+                }, 2000); // Adjust timing for visual effect
+            } else {
+                movingToLeft = true;
+            }
         }
     }
 
-    setInterval(moveBlock, 3000); // interval between moves
+    setInterval(moveBlocks, 5000); // Interval between each move
 });

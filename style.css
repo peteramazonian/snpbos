@@ -12,6 +12,7 @@ body {
     color: #020122;
     font-family: 'vazirmatn', sans-serif;
     text-align: center;
+    overflow: hidden;
 }
 
 .container {
@@ -38,57 +39,48 @@ p {
     bottom: 20%;
     right: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
-.crane-base {
-    position: relative;
-    width: 20px;
-    height: 200px; /* Adjust height as needed */
+.crane-tower {
+    width: 50px;
+    height: 300px; /* Adjust height as needed */
     background-color: #020122;
+    background: repeating-linear-gradient(45deg, #FC9E4F, #FC9E4F 10px, #020122 10px, #020122 20px);
 }
 
 .crane-arm {
-    position: absolute;
-    top: 0;
-    left: -400px; /* Adjust arm length */
-    width: 800px;
-    height: 10px;
+    position: relative;
+    width: 500px;
+    height: 20px;
     background-color: #020122;
-    transform-origin: right;
-    animation: rotate-crane 20s linear infinite;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .crane-trolley {
     position: absolute;
-    top: -5px;
-    left: 20px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background-color: #020122;
-    animation: move-trolley 20s linear infinite;
+    left: 0;
+    animation: move-trolley 10s linear infinite;
 }
 
-@keyframes rotate-crane {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(90deg); }
-    100% { transform: rotate(0deg); }
+.crane-hook {
+    width: 10px;
+    height: 80px;
+    background-color: #020122;
+    position: absolute;
+    top: 30px;
+    left: 10px;
 }
 
 @keyframes move-trolley {
-    0% { left: 20px; }
-    50% { left: calc(100% - 40px); }
-    100% { left: 20px; }
-}
-
-.hook {
-    width: 10px;
-    height: 50px;
-    background-color: #020122;
-    position: absolute;
-    top: 20px;
-    left: 5px;
+    0% { left: 0; }
+    50% { left: calc(100% - 30px); }
+    100% { left: 0; }
 }
 
 .blocks {
