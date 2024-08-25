@@ -45,7 +45,7 @@ p {
 }
 
 .button:hover {
-    background-color: #ffb070; /* Slightly lighter primary color */
+    background-color: #21212a; /* Slightly lighter primary color */
     transform: scale(1.1);
 }
 
