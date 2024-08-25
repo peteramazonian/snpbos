@@ -45,23 +45,62 @@ p {
 }
 
 .button:hover {
-    background-color: #21212a; /* Slightly lighter primary color */
+    background-color: #21212a; /* Slightly darker primary color */
     transform: scale(1.1);
 }
 
 .button:active {
     transform: scale(0.9);
 }
+
 .articles-body {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #FC9E4F; /* Secondary color */
-    color:#020122; /* Primary color */
+    background-color: #FC9E4F; 
+    color: #020122; 
     font-family: 'vazirmatn', sans-serif;
     text-align: center;
+}
+
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background-color: #FFF; /* White background for cards */
+    color: #020122; /* Primary text color */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #020122; /* Primary color for header */
+    color: #FC9E4F; /* Secondary color for text */
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+    font-size: 1em;
+    text-align: right;
 }
