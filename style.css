@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #FC9E4F; /* Primary color */
     color: #020122; /* Secondary color */
     font-family: 'vazirmatn', sans-serif;
@@ -58,12 +58,11 @@ p {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: #FC9E4F; 
-    color: #020122; 
+    min-height: 100vh;
+    background-color: #FC9E4F; /* Primary color */
+    color: #020122; /* Secondary color */
     font-family: 'vazirmatn', sans-serif;
-    text-align: center;
 }
 
 .articles-container {
@@ -71,8 +70,9 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .card {
@@ -82,7 +82,8 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px;
+    width: calc(100% / 2 - 30px); /* Four cards in two rows */
+    max-width: 300px;
     display: flex;
     flex-direction: column;
 }
@@ -98,7 +99,7 @@ p {
 }
 
 .card-content {
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     text-align: right;
@@ -107,7 +108,7 @@ p {
 .card-header {
     background-color: #020122; /* Primary color for header */
     color: #FC9E4F; /* Secondary color for text */
-    padding: 10px 0px;
+    padding: 10px;
     font-size: 1.5em;
     font-weight: bold;
     text-align: center;
