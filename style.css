@@ -1,8 +1,30 @@
+/* Import the font if not using CDN in HTML */
+@import url('https://fonts.bunny.net/css?family=vazirmatn:300,400,500,700');
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FC9E4F;
+    color: #020122;
+    font-family: 'vazirmatn', sans-serif;
+    text-align: center;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 h1 {
-    color: #333;
+    font-size: 3em; /* Adjust the font-size as needed */
+}
+
+p {
+    font-size: 1.5em; /* Adjust the font-size as needed */
 }
