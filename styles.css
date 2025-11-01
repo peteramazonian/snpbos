@@ -89,14 +89,22 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    width: 100%;
+    background: var(--md-sys-color-primary-container);
+}
+
 body {
     font-family: 'Vazirmatn', sans-serif;
-    background: var(--md-sys-color-background);
+    background: transparent;
     color: var(--md-sys-color-on-background);
     min-height: 100vh;
     padding: 2rem;
     overflow-x: hidden;
     position: relative;
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* Animated Background */
@@ -104,8 +112,12 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
     z-index: -1;
     overflow: hidden;
     background: linear-gradient(135deg, 
@@ -845,6 +857,17 @@ header {
 @media (max-width: 768px) {
     body {
         padding: 1rem;
+        max-width: 100vw;
+    }
+    
+    html {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .animated-background {
+        width: 100vw;
+        min-width: 100vw;
     }
 
     .title {
@@ -923,6 +946,11 @@ header {
     .timeline-dot {
         left: 30px;
     }
+    
+    .footer {
+        margin: 1rem -1rem -1rem -1rem;
+        width: calc(100% + 2rem);
+    }
 }
 
 /* Footer */
@@ -933,6 +961,7 @@ header {
     margin: 2rem -2rem -2rem -2rem;
     width: calc(100% + 4rem);
     text-align: center;
+    max-width: 100vw;
 }
 
 .footer-text {
