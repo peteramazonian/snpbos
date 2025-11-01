@@ -91,8 +91,11 @@
 
 html {
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
+    height: 100%;
     background: var(--md-sys-color-primary-container);
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -101,10 +104,14 @@ body {
     color: var(--md-sys-color-on-background);
     min-height: 100vh;
     padding: 2rem;
+    padding-bottom: 0;
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
     width: 100%;
     max-width: 100vw;
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Animated Background */
@@ -855,19 +862,29 @@ header {
 
 /* Responsive */
 @media (max-width: 768px) {
-    body {
-        padding: 1rem;
-        max-width: 100vw;
-    }
-    
     html {
         max-width: 100vw;
         overflow-x: hidden;
+        overflow-y: auto;
+        height: auto;
+        min-height: 100%;
+    }
+    
+    body {
+        padding: 1rem;
+        padding-bottom: 0;
+        max-width: 100vw;
+        min-height: 100vh;
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     
     .animated-background {
         width: 100vw;
         min-width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
     }
 
     .title {
@@ -948,7 +965,7 @@ header {
     }
     
     .footer {
-        margin: 1rem -1rem -1rem -1rem;
+        margin: 1rem -1rem 0 -1rem;
         width: calc(100% + 2rem);
     }
 }
@@ -958,10 +975,11 @@ header {
     background-color: var(--md-sys-color-primary-container);
     min-height: auto;
     padding: 0;
-    margin: 2rem -2rem -2rem -2rem;
+    margin: 2rem -2rem 0 -2rem;
     width: calc(100% + 4rem);
     text-align: center;
     max-width: 100vw;
+    position: relative;
 }
 
 .footer-text {
